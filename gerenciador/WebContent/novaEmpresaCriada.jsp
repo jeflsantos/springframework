@@ -1,10 +1,11 @@
 <%
- String nomeEmpresa = "Alura";
+//Scriplet
+ String nomeEmpresa = (String)request.getAttribute("empresa");
  System.out.println(nomeEmpresa);
 %>
 
 
-<html
+<html>
 
 <body>
 

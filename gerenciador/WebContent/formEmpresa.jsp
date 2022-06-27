@@ -13,6 +13,7 @@
 	<form action="${linkServlestNovaEmpresa}" method= "post">
 	
 		Nome: <input type="text" name="nome"/>
+		Data da Abertura: <input type="text" name="data"/>
 		<input type= "submit">
 	
 	</form>

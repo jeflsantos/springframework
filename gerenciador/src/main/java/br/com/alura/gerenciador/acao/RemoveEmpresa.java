@@ -11,19 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class RemovaEmpresa {
+public class RemoveEmpresa {
 	
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("Removendo empresa");
 		
+		String paramId = request.getParameter("id");
+		Integer id = Integer.valueOf(paramId);
+		
+		System.out.println(id);
+		
 		Banco banco = new Banco();
-		List<Empresa> lista = banco.getEmpresas();
+		banco.removeEmpresa(id);
 		
-		request.setAttribute("empresas", lista);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("entrada?acao=ListaEmpresas");
 	}
 
 }

@@ -17,12 +17,18 @@ public class MostraEmpresa {
 		
 		System.out.println("Mostrando Dados da empresa");
 		
+		String paramId = request.getParameter("id");
+		Integer id = Integer.valueOf(paramId);
+		
 		Banco banco = new Banco();
-		List<Empresa> lista = banco.getEmpresas();
 		
-		request.setAttribute("empresas", lista);
+		Empresa empresa = banco.buscaEmpresaPelaId(id);
+		System.out.println(empresa.getNome());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
+		
+		request.setAttribute("empresa", empresa);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
 		rd.forward(request, response);
 	}
 	

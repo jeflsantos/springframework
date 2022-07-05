@@ -11,7 +11,7 @@
 </head>
 <body>
 	
-	<c:import url="Logout-parcial.jsp"/>
+	<c:import url="logout-parcial.jsp"/>
 
 	<form action="${linkEntradaServlet}" method= "post">
 	
